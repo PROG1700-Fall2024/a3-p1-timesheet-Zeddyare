@@ -1,18 +1,59 @@
 #Program 1 – Timesheet
-#Description:   Design and write a program that accepts the number of hours worked on 
-#               each of five work days from the user, then displays different 
-#               information calculated about those entries as output. 
+#Description:   Design and write a program that accepts the number of hours worked on each of five work days from the user, then displays different information calculated about those entries as output. 
 
-#Student #:     
-#Student Name:  
+#Student #: W0433704
+#Student Name: Zachary Rudolf 
 
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
 
+    #list/variable initialize 
+    days=["Day #1","Day #2","Day #3","Day #4","Day #5",] 
+    dayHrs=[] 
+
+    def getHrs(day):
+        hours=int(input("Enter hours worked on {0}: ".format(day)))
+        return hours
+
+    #Welcome message/desc
+    print("Enter your hours worked for each day this week cycle.\n") 
+
+    #input for days worked 
+    for i in range(5):
+        hours=getHrs(days[i]) 
+        dayHrs.insert(i, hours)  
+
+    #highest day
+    def longestDay():
+        longHr= max(dayHrs) 
+        longDay= dayHrs.index((max(dayHrs))) 
+        print("The most hours worked was on:")
+        print("{0} when you worked {1} hours.".format(days[longDay], longHr)) 
+        #total hours output and average output
+    def averageDay():
+        totalHrs=sum(dayHrs)
+        avgDay=totalHrs/len(dayHrs) 
+        print("The total number of hours worked was: {0}".format(totalHrs))
+        print("The average number of hours worked was: {0}".format(avgDay))
+        
+    #shortest day
+    def slackDays():
+        print("Days you slacked off (i.e. worked less than 7 hours): ")
+        #GPT citation 
+        for i in range(0, len(dayHrs)):
+            if (dayHrs[i]) <7:
+                print("Day #{0}: {1} hours.".format((i+1), (dayHrs[i])))
+            
 
 
 
-
+    #ouputs
+    print("---------------------------------------")
+    longestDay()
+    print("---------------------------------------")
+    averageDay()
+    print("---------------------------------------")
+    slackDays()
 
 
 
