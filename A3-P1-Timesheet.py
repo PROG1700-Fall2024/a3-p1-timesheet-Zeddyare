@@ -37,12 +37,14 @@ def main():
         print("The average number of hours worked was: {0:.1f}".format(avgDay))
         
     #shortest day
-    def slackDays():
-        print("Days you slacked off (i.e. worked less than 7 hours): ")
-        #GPT citation 
-        for i in range(0, len(dayHrs)):
-            if (dayHrs[i]) <7:
-                print("Day #{0}: {1} hours.".format((i+1), (dayHrs[i])))
+    def slackDays(minHrs):
+        if any(i < 7 for i in dayHrs): 
+            print("Days you slacked off (i.e. worked less than 7 hours): ")
+            for i in range(0, len(dayHrs)):
+                if (dayHrs[i]) <minHrs:
+                    print("Day #{0}: {1} hours.".format((i+1), (dayHrs[i])))
+        else:
+            print("You didn't slack off this week, great work!") 
             
 
 
@@ -53,7 +55,7 @@ def main():
     print("---------------------------------------")
     averageDay()
     print("---------------------------------------")
-    slackDays()
+    slackDays(7)
 
 
 
