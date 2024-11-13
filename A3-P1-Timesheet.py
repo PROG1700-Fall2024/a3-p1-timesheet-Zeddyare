@@ -25,16 +25,16 @@ def main():
 
     #highest day
     def longestDay():
-        longHr= max(dayHrs) 
-        longDay= dayHrs.index((max(dayHrs))) 
         print("The most hours worked was on:")
-        print("{0} when you worked {1} hours.".format(days[longDay], longHr)) 
+        for i in range(0,len(dayHrs)): 
+            if dayHrs[i]==max(dayHrs):
+                print("Day #{0} when you worked {1} hours.".format((i+1), dayHrs[i])) 
         #total hours output and average output
     def averageDay():
         totalHrs=sum(dayHrs)
         avgDay=totalHrs/len(dayHrs) 
         print("The total number of hours worked was: {0}".format(totalHrs))
-        print("The average number of hours worked was: {0}".format(avgDay))
+        print("The average number of hours worked was: {0:.1f}".format(avgDay))
         
     #shortest day
     def slackDays():
