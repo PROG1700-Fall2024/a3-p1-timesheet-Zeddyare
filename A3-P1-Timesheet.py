@@ -41,7 +41,15 @@ def main():
     print("Enter your hours worked for each day this week cycle.\n")
     for i in range(5):
         hours=getHrs(days[i]) 
-        dayHrs.insert(i, hours) 
+        if hours <=0: 
+            print("You did not work this day")
+            dayHrs.insert(i, hours) 
+        elif hours >=24:
+            print("Nice try, we don't do overtime. 16 hour maximum shift,\nmaybe go get some sleep.")
+            hours=16
+            dayHrs.insert(i, hours) 
+        else:    
+            dayHrs.insert(i, hours) 
     print("---------------------------------------")
     longestDay()
     print("---------------------------------------")
