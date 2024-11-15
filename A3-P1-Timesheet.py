@@ -57,8 +57,6 @@ def main():
     print("---------------------------------------")
     slackDays(7)
 
-
-
     # YOUR CODE ENDS HERE
 
 main()
