@@ -44,7 +44,7 @@ def main():
         if hours <=0: 
             print("You did not work this day")
             dayHrs.insert(i, hours) 
-        elif hours >=24:
+        elif hours >=16:
             print("Nice try, we don't do overtime. 16 hour maximum shift,\nmaybe go get some sleep.")
             hours=16
             dayHrs.insert(i, hours) 
